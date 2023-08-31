@@ -18,7 +18,7 @@ const Login = (props) => {
     if (!emailRef.current.value || !passwordRef.current.value) {
       alert("Incorrect Input");
     } else {
-      const response = await axios.post(`https://44.215.170.76:5000/loginUser`, {
+      const response = await axios.post(`http://44.215.170.76:5000/loginUser`, {
         email: emailRef.current.value,
         password: passwordRef.current.value,
       });

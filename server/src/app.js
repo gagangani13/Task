@@ -8,7 +8,7 @@ const router = require('./router')
 require('dotenv').config()
 
 app.use(cors({
-    origin:'https://44.215.170.76:3000'
+    origin:'http://44.215.170.76:3000'
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));

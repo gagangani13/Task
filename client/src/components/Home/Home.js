@@ -31,7 +31,7 @@ const Home = () => {
   async function getTasks(currPage = 1, size = 2, status = "All") {
     const token = localStorage.getItem("idToken");
     const response = await axios.get(
-      `https://44.215.170.76:5000/getTasks?page=${currPage}&size=${size}&status=${status}`,
+      `http://44.215.170.76:5000/getTasks?page=${currPage}&size=${size}&status=${status}`,
       {
         headers: { Authorization: token },
       }
@@ -66,7 +66,7 @@ const Home = () => {
     };
     if (editing === null) {
       const response = await axios.post(
-        "https://44.215.170.76:5000/addTask",
+        "http://44.215.170.76:5000/addTask",
         details,
         { headers: { Authorization: token } }
       );
@@ -84,7 +84,7 @@ const Home = () => {
       }
     } else {
       const response = await axios.put(
-        `https://44.215.170.76:5000/editTask/${editing}`,
+        `http://44.215.170.76:5000/editTask/${editing}`,
         details,
         {
           headers: { Authorization: token },
@@ -119,7 +119,7 @@ const Home = () => {
     setLoad(true);
     const key = e.target.parentElement.id;
     const response = await axios.delete(
-      `https://44.215.170.76:5000/deleteTask/${key}`,
+      `http://44.215.170.76:5000/deleteTask/${key}`,
       { headers: { Authorization: token } }
     );
     const data = await response.data;
@@ -137,7 +137,7 @@ const Home = () => {
   async function editTask(e) {
     setLoad(true);
     const key = e.target.parentElement.id;
-    const response = await axios.get(`https://44.215.170.76:5000/getTask/${key}`, {
+    const response = await axios.get(`http://44.215.170.76:5000/getTask/${key}`, {
       headers: { Authorization: token },
     });
     const data = await response.data;

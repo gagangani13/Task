@@ -30,7 +30,7 @@ const SignUp = (props) => {
         alert("Password must be at least 8 characters long and contain a mix of uppercase and lowercase letters, numbers, and special characters.")
     }else{
 
-        const response = await axios.post("https://44.215.170.76:5000/signupUser", {
+        const response = await axios.post("http://44.215.170.76:5000/signupUser", {
               email: emailRef.current.value,
               password: passwordRef.current.value,
               name: nameRef.current.value,
