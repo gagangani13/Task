@@ -9,7 +9,7 @@ const registerUser = async (req, res) => {
     const { email, password, name } = req.body;
 
     if (!name || !email || !password) {
-      res.send({ message: "Missing or invalid input", ok: false });
+      throw new Error("Missing or invalid input");
     }
 
     const hashPassword = await bcryptjs.hash(password, 10);
@@ -35,16 +35,13 @@ const loginUser = async (req, res) => {
     const getUser = await User.findOne({ email });
 
     if (!getUser) {
-      res.send({ message: "Invalid email", ok: false });
+      throw new Error("Invalid email");
     }
 
-    const comparePassword = await bcryptjs.compare(
-      password,
-      getUser.password
-    );
+    const comparePassword = await bcryptjs.compare(password, getUser.password);
 
     if (!comparePassword) {
-      res.send({ message: "Wrong Password", ok: false });
+      throw new Error( "Wrong Password");
     }
 
     const token = await jwt.sign(getUser.id, process.env.JWT_SECRET);
