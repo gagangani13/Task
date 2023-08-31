@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Geologica:wght@300&family=Orbitron:wght@500&display=swap');
+.form{
+    margin: 1rem 0rem;
+    background: linear-gradient(45deg, #4b0404, #1f5704);
+    padding: 1rem;
+    border-radius: 5px;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    row-gap: 5px;
+}
+
+
+.home_layout{
+    position: absolute;
+    top: 1rem;
+    text-align: center;
+    width: 80vw;
+    left: 10vw;
+    font-family: 'Geologica', sans-serif;
+}
+
+h3{
+    font-family: 'Cherry Bomb One', cursive;
+    color: beige;
+}
+
+.pendingItem{
+    background: linear-gradient(45deg, black, #e10d0d);
+    color: bisque;
+    display: grid;
+    grid-template-columns:  20vw 20vw auto auto;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.completedItem{
+    background: linear-gradient(45deg, black, #3cbe06);
+    color: bisque;
+    display: grid;
+    grid-template-columns:  20vw 20vw auto auto;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.button{
+    padding: 5px;
+    width: 30px;
+    border-radius: 5px;
+}
+
+.logout{
+    color: red;
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    background: black;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 1px 10px white;
+}
+.logout:hover{
+    background: rgba(0, 0, 0, 0.427);
+    cursor: pointer;
+}
+
+@media screen and (max-width:700px) {
+    .form{
+        grid-template-columns: auto;
+        row-gap: 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .pendingItem, .completedItem{
+        grid-template-columns: auto;
+        justify-content: center;
+        row-gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    .button{
+        padding: 10px;
+        width: 80px;
+    }
+}
